@@ -1,0 +1,143 @@
+<%- include('../partials/admin/header') %>
+
+    <!-- Main Body (content)-->
+    <main class="main users chart-page" id="skip-target">
+      <div class="container">
+
+        <div>
+          <div class="col col-xs-6">
+            <h3 style="color: #64BB6A;"><b>Item to Borrowed</b></h3>
+            <br>
+            <p id="p1"></p>
+        </div>
+          <br>
+
+          
+          <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+        <% if(info && info.length > 0){ %>
+            <div class="alert alert-info" role="alert">
+                <%= info %>
+            </div>
+        <% } %>
+
+          <!-- Table -->
+          <form id="appointment-form" role="form" method="POST" >
+            <div>
+                 <h3>Admin <%=user.Fname%> <%=user.Lname%>,
+                 prescribing <u><%=item[0].NAME%></u></h3>
+
+            </div>
+  
+            <div>
+                 <input type="hidden" name="_method" value="PUT">
+                 <input type="hidden" name="Patient_id" value="<%item[0].Item_id%>" >
+
+                 <div class="col-md-6 col-sm-6">
+  
+                      <br>
+                      <textarea name="Disease" style="margin-left: -13px;" cols="170" rows="4" placeholder="Medication Name" required></textarea>
+                      <br>
+                      <textarea name="Treatment" style="margin-left: -13px;" cols="170"  rows="4" placeholder="Description" required></textarea>
+                      <br>
+                 </div>
+  
+                 <div class="row">
+                      <div class="col-xl-6">
+                           <div class="form-group">
+                                <label for="password">Select Day:</label>
+                                <br>
+                                <article>
+                                     <input type="checkbox" name="sun" id="feature1" value="Sunday"/>
+                                          <div>
+                                               <span> Sun </span>
+                                          </div>
+                                </article>
+                                <article>
+                                     <input type="checkbox" name="day" id="feature1" value="Monday"/>
+                                          <div>
+                                               <span> Mon </span>
+                                          </div>
+                                </article>
+                                <article>
+                                     <input type="checkbox" name="tue" id="feature1" value="Tuesday"/>
+                                          <div>
+                                               <span> Tue </span>
+                                          </div>
+                                </article>
+                                <article>
+                                     <input type="checkbox" name="wed" id="feature1" value="Wednesday"/>
+                                          <div>
+                                               <span> Wed </span>
+                                          </div>
+                                </article>
+                                <article>
+                                     <input type="checkbox" name="thu" id="feature1" value="Thursday"/>
+                                          <div>
+                                               <span> Thu </span>
+                                          </div>
+                                </article>
+                                <article>
+                                     <input type="checkbox" name="fri" id="feature1" value="Friday"/>
+                                          <div>
+                                               <span> Fri </span>
+                                          </div>
+                                </article>
+                                <article>
+                                     <input type="checkbox" name="sat" id="feature1" value="Saturday"/>
+                                          <div>
+                                               <span> Sat </span>
+                                          </div>
+                                </article>
+                           </div>
+                      </div>  
+  
+                      <div class="col-xl-6">
+                           <div class="form-group">
+                                <label for="medTime">Select Time:</label>
+                                <input type="time" name="time" class="form-control" id="medTime" required>
+                           </div>
+                      </div>    
+  
+                      <div class="col-xl-6">
+                           <br>
+                           <br>
+                           <div class="form-group">
+                               <label for="password">Medicine Count:</label>
+                               <input type="number" name="medcount" class="form-control" id="password" required>
+                           </div>
+                      </div>
+                      <div class="col-xl-6">
+                           <br>
+                           <br>
+                           <div class="form-group">
+                               <label for="medTime">Duration (in Days):</label>
+                               <input type="number" name="duration" class="form-control" id="medTime" required>
+                           </div>
+                      </div> 
+  
+                 </div>
+  
+                 <div class="row">
+                      <div class="col-xl-6">
+                          <a href="/doctor/setprescription" class="btn outline-btn">Cancel</a>
+                      </div>
+                      <div class="col-xl-6">
+                          <button type="submit" class="btn bg-btn float-right">Send Prescription</a>
+                      </div>      
+                  </div>
+            </div>
+       </form>
+        
+        </div>
+      </div>
+    </main>
+<%- include('../partials/footer') %>

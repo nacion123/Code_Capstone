@@ -1,0 +1,76 @@
+<%- include('../partials/admin/contentheader') %>
+
+    <!-- Main Body (content)-->
+    <main class="main users chart-page" id="skip-target">
+      <div class="container">
+
+        <div>
+          
+          <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+        <% if(info && info.length > 0){ %>
+            <div class="alert alert-info" role="alert">
+                <%= info %>
+            </div>
+        <% } %>
+
+          <!-- Table -->
+          <div class="float-child green">
+               <section id="appointment" data-stellar-background-ratio="3">
+                              <div class="col-md-12 ol-sm-6">
+                                   <!--DOCTOR-->
+                                   <form id="appointment-form" style="margin-left: 100px;" role="form" method="post" action="/doctor/profile">
+                                        <!-- SECTION TITLE -->
+                                        <div style="margin-left: 10px;">
+                                             <i class="fa fa-user" style="font-size: 100px; margin-left: 8px; color: black;" ></i>
+                                             <h3>PERSONAL INFORMATION</h3>
+
+                                        </div>
+                                        <br>
+          
+                                        <div class="" style="border-left: 4px solid black;">
+                                             <br>
+                                             <input type="hidden" name="_method" value="PUT">
+                                             <div class="form-group">
+                                                   <input type="text" class="form-control" style="font-size: 20px; border-color: transparent; color: #0c2d1c; background-color: transparent;" name="fname" placeholder="First Name" value="First Name: <%=user.Fname%> " disabled required>
+                                             </div>
+          
+                                             <div class="form-group">
+                                                  <input type="text" class="form-control" style="font-size: 20px; border-color: transparent; color: #0c2d1c; background-color: transparent;" name="mname" placeholder="Middle Name" value="Middle Name: <%=user.Mname%>" disabled required>
+                                             </div>
+          
+                                             <div class="form-group">
+                                                  <input type="text" class="form-control" style="font-size: 20px; border-color: transparent; color: #0c2d1c; background-color: transparent;"  name="lname" placeholder="Last Name" value="Last Name: <%=user.Lname%>" disabled required>
+                                             </div>
+          
+                                              <div class="form-group">
+                                                  <input type="email" class="form-control" style="font-size: 20px; border-color: transparent; color: #0c2d1c; background-color: transparent;" id="email" name="email" placeholder="Your Email" value="Email: <%=user.Email%>" disabled required>
+                                             </div> 
+          
+          
+                                        </div>
+                                  </form>
+                              </div>
+                         </section>
+                    </div>
+
+         <div class="float-child magenta">
+          <div class="col-md-6 col-sm-6">
+               <a href="/admin/updateprofile" style="text-decoration: none;">
+                    <button type="submit" class="form-control prof" id="cf-submit">EDIT PROFILE</button>
+               </a>
+          </div>
+     </div>
+        
+        </div>
+      </div>
+    </main>
+<%- include('../partials/footer') %>

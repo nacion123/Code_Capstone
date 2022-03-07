@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/Mediko_Style.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>ELETS | Verify Account</title>
+</head>
+<body class="bg-login-register">
+    
+    <!-- FORGET -->
+    <section id="appointment" data-stellar-background-ratio="3">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-6">
+                    <div class="cont-titles">
+                        <img src="/img/logo.png" alt="MediKo Logo"  class="image-logo"/>
+                        <br>
+                        <br>
+                        
+                        <h1><b style="color:#fca311;">Welcome to <br><span  style="color:#fca311;">Room Utilization With Conflict Detection</span> </b></h1>
+                        <br>
+                    </div>
+                </div>
+
+                <div class="col-xl-6">
+
+                    <div class="cont-form" style="margin-top: 250px;">
+                        <!-- ENTER EMAIL TO RECOVER PASSWORD -->
+                        <h3>Click the link below to recover your password</h3>
+
+                        <% if(error && error.length > 0){ %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= error %>
+                            </div>
+                        <% } %>
+                        <% if(success && success.length > 0){ %>
+                            <div class="alert alert-success" role="alert">
+                                <a href="<%= success %>">Link For Password Recovery</a>
+                            </div>
+                        <% } %>
+                        <% if(info && info.length > 0){ %>
+                            <div class="alert alert-info" role="alert">
+                                <%= info %>
+                            </div>
+                        <% } %>
+                    <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+</body>
+</html>
+
+

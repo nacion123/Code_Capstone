@@ -1,0 +1,74 @@
+<%- include('../partials/admin/header') %>
+    <!-- Main Body (content)-->
+    <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert">
+          <%= error %>
+      </div>
+  <% } %>
+  <% if(success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert">
+          <%= success %>
+      </div>
+  <% } %>
+  <% if(info && info.length > 0){ %>
+      <div class="alert alert-info" role="alert">
+          <%= info %>
+      </div>
+  <% } %>
+  <form id="appointment-form" class="signup-form" role="form" method="post" action="/admin/equipment/email/<%=row1[0].ITEM_ID %>">
+    <input type="hidden" name="_method" value="PUT">
+
+  <!-- form header -->
+  <div class="form-header">
+    <h1>Email User for Equipment Maintenance</h1>
+  </div>
+
+  <!-- form body -->
+  <div class="form-body">
+
+    <!-- Passwrod and confirm password -->
+    <div class="horizontal-group">
+      <div class="form-group left">
+        <label for="password" class="label-title">Email</label>
+        <input type="text" name="email" id="password" class="form-input" required="required">
+      </div>
+      <div class="form-group right">
+        <label for="confirm-password" class="label-title">About</label>
+        <input type="text" class="form-input" id="spec" name="about" required="required">
+      </div>
+    </div>
+
+  <!-- form-footer -->
+  <div class="form-footer">
+    <button type="submit" style="background-color:#281b0d; border-color: transparent;" class="btn btn-primary btns">
+      Send Email
+  </button>
+  </div>
+
+
+</form>
+
+           <script>
+
+            var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var d = new Date();
+            var monthName=months[d.getMonth()]+'-'+d.getDate()+'-'+d.getFullYear();
+
+            document.getElementById("p1").innerHTML = monthName;
+
+            function submitForm(){
+
+              var fn = document.getElementById('fname').value;
+              var mn = document.getElementById('mname').value;
+              var ln = document.getElementById('lname').value;
+              var em = document.getElementById('email').value;
+              var pass = document.getElementById('password').value;
+              var spec = document.getElementById('spec').value;
+
+              alert ("Item Name : " + fn + "\n" + "Brand : " + mn + "\n" + "Condition : " + ln + "\n" + "Unit Price : " + em + "\n" + "Location : " + pass + "\n" + "Item Life Span : " + spec);
+              }
+
+
+            </script>
+
+<%- include('../partials/footer') %>

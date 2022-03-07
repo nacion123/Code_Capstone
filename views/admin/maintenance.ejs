@@ -1,0 +1,66 @@
+<%- include('../partials/admin/header') %>
+    <!-- Main Body (content)-->
+    <main class="main users chart-page" id="skip-target">
+      <div class="container">
+
+        <br>
+        <br>
+
+        <div>
+          <div class="col col-xs-6">
+            <h3 style="color: #1e140a;"><b>MAINTENANCE RESULTS:</b></h3>
+            <br>
+            <p id="p1"></p>
+        </div>
+          <br>
+          <br>
+
+          
+          <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+        <% if(info && info.length > 0){ %>
+            <div class="alert alert-info" role="alert">
+                <%= info %>
+            </div>
+        <% } %>
+
+          <!-- Table -->
+          <table class="table table-striped table-bordered table-list">
+            <thead>
+              <tr>
+                  <th><center>Equipment Name</center></th>
+                  <th>Brand</th>
+                  <th>Condition</th>
+                  <th>User</th>
+                  <th>Location</th>
+                  <th>Life Span</th>
+              </tr>
+            </thead>
+            <tbody>
+                  <% tracing.forEach((row, i) => { %>
+                    <tr>
+                      <td><center><%=row.NAME%></center></td>
+                      <td><%=row.BRAND%></td>
+                      <td><%=row.COND %></td>
+                      <td><%=row.PRICE %></td>
+                      <td><%=row.LOCATION %></td>
+                      <td><%=row.LIFESPAN %></td>
+
+                    </tr>
+                  <% }) %>
+            </tbody>
+          </table>
+        
+        </div>
+      </div>
+    </main>
+
+<%- include('../partials/footer') %>

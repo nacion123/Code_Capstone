@@ -1,0 +1,99 @@
+<%- include('../partials/admin/header') %>
+
+    <!-- Main Body (content)-->
+
+    <main style="margin-top: 0px;"  class="main users chart-page" id="skip-target">
+      <div class="container">
+        <div class="row stat-cards" style="margin-top: -25px;">
+          <div class="col-md-12 col-xl-12">
+              <div class="stat-cards-item" style="background-color: #132519;">
+                    <div class="stat-cards-icon ">
+                      <i data-feather="file" aria-hidden="true"></i>
+                    </div>
+                    <div class="stat-cards-info">
+                      <h3 class="stat-cards-info__num"><%=row.length%></h3>
+                      <h5 class="stat-cards-info__title">Room Number of Rooms </a></h5>
+                    </div>
+              </div>
+          </div>
+
+      </div>
+      <br>
+      <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+      <center>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+      </center>
+    <% } %>
+    <% if(info && info.length > 0){ %>
+        <div class="alert alert-info" role="alert">
+            <%= info %>
+        </div>
+    <% } %>
+        <br>
+
+        <div>
+          <h3 style="color: white;"><b>Room Created</b></h3>
+          <br>
+
+          <br>
+          <br>
+
+        
+
+          <!-- Table -->
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                    <th class="hidden-xs">#</th>
+                    <th><center>Room Name</center></th>
+                    <th><center>Room Type</center></th>
+                    <th><center>Room Floor</center></th>
+                    <th><center>Room Custodian</center></th>
+                    <th><center>Actions</center></th>
+                </tr> 
+              </thead>
+              <tbody id="databody">
+                                        
+              </tbody>
+
+              <tbody>
+
+                      <% row.forEach((appointment, i) => { %>
+                        <tr>
+                          <td class="hidden-xs"><%=i+1%></td>
+                          <td><center> <%=appointment.ROOM_NUM%> </center></td>
+                          <td><center> <%=appointment.FLOOR%> </center></td>
+                          <td><center> <%=appointment.ROOM_TYPE%> </center></td>
+                          <td><center> <%=appointment.ROOM_PERSON%> </center></td>
+                            <td align="center">
+
+                             <% id=appointment.ROOM_ID %>
+                             <a href="remove/<%=appointment.ROOM_ID%>" class="btn btn-danger" style="background-color:red; border-color: transparent;">Delete</a>
+                                 <a href="delete/<%=appointment.ROOM_ID%>" class="btn btn-danger" style="background-color:#132519; border-color: transparent;">Save</a>
+                                 <a href="room/<%=appointment.ROOM_ID%>" class="btn btn-danger" style="background-color:blue; border-color: transparent;">Schedule </a>
+                           </td>
+  
+                        </tr>
+                      <% }) %>
+
+              </tbody>
+            </table>
+        
+        </div>
+      </div>
+    </main>
+
+    
+    <script>
+
+
+    </script>
+
+<%- include('../partials/footer') %>

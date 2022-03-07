@@ -1,0 +1,106 @@
+<%- include('../partials/admin/header') %>
+    <!-- Main Body (content)-->
+    <main style="margin-top: 0px; background-color:#426972;"  class="main users chart-page" id="skip-target">
+      <div class="container">
+  <form id="appointment-form" role="form" method="post" action="/admin/addnewroom" class="signup-form">
+
+  <!-- form header -->
+  <div class="form-header">
+    <h1>Add Room </h1>
+  </div>
+  <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+        <%= error %>
+    </div>
+<% } %>
+<% if(success && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+        <%= success %>
+    </div>
+<% } %>
+<% if(info && info.length > 0){ %>
+    <div class="alert alert-info" role="alert">
+        <%= info %>
+    </div>
+<% } %>
+  <!-- form body -->
+  <div class="form-body">
+
+    <!-- Firstname and Lastname -->
+    <div class="horizontal-group">
+      <div class="form-group right">
+        <label for="lname" class="label-title"><b>Room name</b></label>
+        <input type="text" id="roomname" name="roomname" class="form-input" required/>
+    </div>
+
+      <div class="form-group left">
+        <label for="mname" class="label-title"><b>Room Type</b></label>
+        <input type="text" id="roomtype" name="roomtype" class="form-input" required/>
+      </div>
+    </div>
+
+    
+    <!-- Firstname and Lastname -->
+    <div class="horizontal-group">
+        <div class="form-group right">
+          <label for="lname" class="label-title"><b>Room Floor</b></label>
+          <input type="text" id="roomfloor" name="roomfloor" class="form-input" required/>
+      </div>
+  
+        <div class="form-group left">
+          <label for="mname" class="label-title"><b>Person Assigned</b></label>
+          <input type="text" id="roomperson" name="roomperson" class="form-input" required/>
+        </div>
+      </div>
+
+
+
+  <!-- form-footer -->
+  <div class="form-footer">
+    <button type="button" style="background-color:#0a2825; border-color: transparent;" class="btn btn-primary btns" data-toggle="modal" onclick="submitForm();" data-target="#staticBackdrop">
+      Create
+  </button>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          </div>
+          <div class="modal-body">
+              <h4>Do you want to add this Room?</h4>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="cf-submit">Add</button>
+          </div>
+      </div>
+      </div>
+  </div>
+
+</form>
+</div>
+</main>
+           <script>
+
+            var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var d = new Date();
+            var monthName=months[d.getMonth()]+'-'+d.getDate()+'-'+d.getFullYear();
+
+            document.getElementById("p1").innerHTML = monthName;
+
+            function submitForm(){
+
+              var fn = document.getElementById('fname').value;
+              var mn = document.getElementById('mname').value;
+              var ln = document.getElementById('lname').value;
+              var em = document.getElementById('email').value;
+              var pass = document.getElementById('password').value;
+              var spec = document.getElementById('spec').value;
+
+              alert ("Item Name : " + fn + "\n" + "Brand : " + mn + "\n" + "Condition : " + ln + "\n" + "Unit Price : " + em + "\n" + "Location : " + pass + "\n" + "Item Life Span : " + spec);
+              }
+
+
+            </script>
+<%- include('../partials/footer') %>

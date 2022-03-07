@@ -1,0 +1,662 @@
+<%- include('../partials/admin/contentheader') %>
+    <!-- Main Body (content)-->
+    <main class="main users chart-page" id="skip-target">
+      <div class="container">
+        <div>
+          <div class="col col-xs-6">
+            <a href="/admin/dashboard/<%=rows1[0].ROOM_ID %>" class="btn btn-danger" style="background-color:blue; margin-left: -10px; border-color: transparent; padding: 10px 30px; margin-bottom: 10px;">Add Schedule</a>
+            <br>
+        </div>
+        <a href="javascript:void(0);" onclick="printPageArea('printableArea')" class="btn btn-primary" style="background-color: #0a2825; border-color: transparent; padding: 10px 30px; margin-bottom: 10px;">Print</a>
+          <br>
+          <div id="printableArea">
+        <center><img src="/img/logo.png" alt="Logo" style="width: 100px; margin-top: -150px; margin-left: 800px;"></center>
+        <select  style="padding: 10px 10px; margin-left: 885px; margin-top: -100px;" name="price"required>
+            <option value="">A.Y 2021-2022</option>
+            <option value="Monday">A.Y 2022-2023</option>
+            <option value="Tuesday">A.Y 2023-2024</option>
+            <option value="Wednesday">A.Y 2024-2025</option>
+            <option value="Thursday">A.Y 2025-2026</option>
+            <option value="Friday">A.Y 2026-2027</option>
+            <option value="Saturday">A.Y 2028-2029</option>
+            <option value="Sunday">A.Y 2029-2030</option>
+        </select>
+        <br>
+          <br>
+          <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+        <% if(info && info.length > 0){ %>
+            <div class="alert alert-info" role="alert">
+                <%= info %>
+            </div>
+        <% } %>
+
+          <!-- Table -->
+          <table class="table table-striped table-bordered table-list">
+            <thead>
+              <tr>
+                  <th><center>Time</center></th>
+                  <th><center>Monday</center></th>
+                  <th><center>Tuesday</center></th>
+                  <th><center>Wednesday</center></th>
+                  <th><center>Thursday</center></th>
+                  <th><center>Friday</center></th>
+                  <th><center>Saturday</center></th>
+                  <th><center>Sunday</center></th>
+              </tr>
+            </thead>
+            <tbody>
+                    <tr>          
+                      <td><center>8:00-9:00</center></td>    
+                      <% rows3.forEach((rows3, i) => { %>
+                      <% if (rows3.PRICE == 'Monday' && rows3.LOCATION == '8:00-9:00') { %>
+                        <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows3, i) => { %>
+                          <% if (rows3.PRICE == 'Tuesday' && rows3.LOCATION == '8:00-9:00') { %>
+                            <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '8:00-9:00') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '8:00-9:00') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows3, i) => { %>
+                                      <% if (rows3.PRICE == 'Friday' && rows3.LOCATION == '8:00-9:00') { %>
+                                        <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows3, i) => { %>
+                                          <% if (rows3.PRICE == 'Saturday' && rows3.LOCATION == '8:00-9:00') { %>
+                                            <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows3, i) => { %>
+                                              <% if (rows3.PRICE == 'Sunday' && rows3.LOCATION == '8:00-9:00') { %>
+                                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+
+                    <tr>
+                      <td><center>10:00-10:30</center></td>    
+                      <% rows3.forEach((rows1, i) => { %>
+                      <% if (rows1.PRICE == 'Monday' && rows1.LOCATION == '10:00-10:30') { %>
+                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows1, i) => { %>
+                          <% if (rows1.PRICE == 'Tuesday' && rows1.LOCATION == '10:00-10:30') { %>
+                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '10:00-10:30') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '10:00-10:30') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows1, i) => { %>
+                                      <% if (rows1.PRICE == 'Friday' && rows1.LOCATION == '10:00-10:30') { %>
+                                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows1, i) => { %>
+                                          <% if (rows1.PRICE == 'Saturday' && rows1.LOCATION == '10:00-10:30') { %>
+                                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows1, i) => { %>
+                                              <% if (rows1.PRICE == 'Sunday' && rows1.LOCATION == '10:00-10:30') { %>
+                                                <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+
+
+                    <tr>
+                      <td><center>11:20-11:50</center></td>    
+                      <% rows3.forEach((rows1, i) => { %>
+                      <% if (rows1.PRICE == 'Monday' && rows1.LOCATION == '11:20-11:50') { %>
+                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows1, i) => { %>
+                          <% if (rows1.PRICE == 'Tuesday' && rows1.LOCATION == '11:20-11:50') { %>
+                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '11:20-11:50') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '11:20-11:50') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows1, i) => { %>
+                                      <% if (rows1.PRICE == 'Friday' && rows1.LOCATION == '11:20-11:50') { %>
+                                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows1, i) => { %>
+                                          <% if (rows1.PRICE == 'Saturday' && rows1.LOCATION == '11:20-11:50') { %>
+                                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows1, i) => { %>
+                                              <% if (rows1.PRICE == 'Sunday' && rows1.LOCATION == '11:20-11:50') { %>
+                                                <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+
+
+                    <tr>
+                      <td><center>12:00-12:50</center></td>    
+                      <% rows3.forEach((rows1, i) => { %>
+                      <% if (rows1.PRICE == 'Monday' && rows1.LOCATION == '12:00-12:50') { %>
+                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows1, i) => { %>
+                          <% if (rows1.PRICE == 'Tuesday' && rows1.LOCATION == '12:00-12:50') { %>
+                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '12:00-12:50') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '12:00-12:50') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows1, i) => { %>
+                                      <% if (rows1.PRICE == 'Friday' && rows1.LOCATION == '12:00-12:50') { %>
+                                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows1, i) => { %>
+                                          <% if (rows1.PRICE == 'Saturday' && rows1.LOCATION == '12:00-12:50') { %>
+                                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows1, i) => { %>
+                                              <% if (rows1.PRICE == 'Sunday' && rows1.LOCATION == '12:00-12:50') { %>
+                                                <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+
+
+                    <tr>
+                      <td><center>1:00-1:20</center></td>    
+                      <% rows3.forEach((rows1, i) => { %>
+                      <% if (rows1.PRICE == 'Monday' && rows1.LOCATION == '1:00-1:20') { %>
+                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows1, i) => { %>
+                          <% if (rows1.PRICE == 'Tuesday' && rows1.LOCATION == '1:00-1:20') { %>
+                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '1:00-1:20') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '1:00-1:20') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows1, i) => { %>
+                                      <% if (rows1.PRICE == 'Friday' && rows1.LOCATION == '1:00-1:20') { %>
+                                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows1, i) => { %>
+                                          <% if (rows1.PRICE == 'Saturday' && rows1.LOCATION == '1:00-1:20') { %>
+                                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows1, i) => { %>
+                                              <% if (rows1.PRICE == 'Sunday' && rows1.LOCATION == '1:00-1:20') { %>
+                                                <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+
+
+                    <tr>
+                      <td><center>2:00-2:20</center></td>    
+                      <% rows3.forEach((rows1, i) => { %>
+                      <% if (rows1.PRICE == 'Monday' && rows1.LOCATION == '2:00-2:20') { %>
+                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows1, i) => { %>
+                          <% if (rows1.PRICE == 'Tuesday' && rows1.LOCATION == '2:00-2:20') { %>
+                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '2:00-2:20') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '2:00-2:20') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows1, i) => { %>
+                                      <% if (rows1.PRICE == 'Friday' && rows1.LOCATION == '2:00-2:20') { %>
+                                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows1, i) => { %>
+                                          <% if (rows1.PRICE == 'Saturday' && rows1.LOCATION == '2:00-2:20') { %>
+                                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows1, i) => { %>
+                                              <% if (rows1.PRICE == 'Sunday' && rows1.LOCATION == '2:00-2:20') { %>
+                                                <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+
+
+                    <tr>
+                      <td><center>2:40-2:50</center></td>    
+                      <% rows3.forEach((rows1, i) => { %>
+                      <% if (rows1.PRICE == 'Monday' && rows1.LOCATION == '2:40-2:50') { %>
+                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows1, i) => { %>
+                          <% if (rows1.PRICE == 'Tuesday' && rows1.LOCATION == '2:40-2:50') { %>
+                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '2:40-2:50') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '2:40-2:50') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows1, i) => { %>
+                                      <% if (rows1.PRICE == 'Friday' && rows1.LOCATION == '2:40-2:50') { %>
+                                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows1, i) => { %>
+                                          <% if (rows1.PRICE == 'Saturday' && rows1.LOCATION == '2:40-2:50') { %>
+                                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows1, i) => { %>
+                                              <% if (rows1.PRICE == 'Sunday' && rows1.LOCATION == '2:40-2:50') { %>
+                                                <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+
+
+                    <tr>
+                      <td><center>3:00-3:20</center></td>    
+                      <% rows3.forEach((rows1, i) => { %>
+                      <% if (rows1.PRICE == 'Monday' && rows1.LOCATION == '3:00-3:20') { %>
+                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows1, i) => { %>
+                          <% if (rows1.PRICE == 'Tuesday' && rows1.LOCATION == '3:00-3:20') { %>
+                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '3:00-3:20') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '3:00-3:20') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows1, i) => { %>
+                                      <% if (rows1.PRICE == 'Friday' && rows1.LOCATION == '3:00-3:20') { %>
+                                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows1, i) => { %>
+                                          <% if (rows1.PRICE == 'Saturday' && rows1.LOCATION == '3:00-3:20') { %>
+                                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows1, i) => { %>
+                                              <% if (rows1.PRICE == 'Sunday' && rows1.LOCATION == '3:00-3:20') { %>
+                                                <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+
+
+                    <tr>
+                      <td><center>4:00-4:20</center></td>    
+                      <% rows3.forEach((rows1, i) => { %>
+                      <% if (rows1.PRICE == 'Monday' && rows1.LOCATION == '4:00-4:20') { %>
+                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows1, i) => { %>
+                          <% if (rows1.PRICE == 'Tuesday' && rows1.LOCATION == '4:00-4:20') { %>
+                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '4:00-4:20') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '4:00-4:20') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows1, i) => { %>
+                                      <% if (rows1.PRICE == 'Friday' && rows1.LOCATION == '4:00-4:20') { %>
+                                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows1, i) => { %>
+                                          <% if (rows1.PRICE == 'Saturday' && rows1.LOCATION == '4:00-4:20') { %>
+                                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows1, i) => { %>
+                                              <% if (rows1.PRICE == 'Sunday' && rows1.LOCATION == '4:00-4:20') { %>
+                                                <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+
+                    
+                    <tr>
+                      <td><center>4:30-5:00</center></td>    
+                      <% rows3.forEach((rows1, i) => { %>
+                      <% if (rows1.PRICE == 'Monday' && rows1.LOCATION == '4:30-5:00') { %>
+                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                        <%} else { %>
+                        <% } %>
+                        <% }) %>
+
+                        <% rows3.forEach((rows1, i) => { %>
+                          <% if (rows1.PRICE == 'Tuesday' && rows1.LOCATION == '4:30-5:00') { %>
+                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                            <%} else { %>
+                            <% } %>
+                            <% }) %>
+
+                            <% rows3.forEach((rows3, i) => { %>
+                              <% if (rows3.PRICE == 'Wednesday' && rows3.LOCATION == '4:30-5:00') { %>
+                                <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                <%} else { %>
+                                <% } %>
+                                <% }) %>
+
+                                <% rows3.forEach((rows3, i) => { %>
+                                  <% if (rows3.PRICE == 'Thursday' && rows3.LOCATION == '4:30-5:00') { %>
+                                    <td><center> <p><%=rows3.COND%> </p><p><%=rows3.BRAND%></p></center></td>
+                                    <%} else { %>
+                                    <% } %>
+                                    <% }) %>
+
+                                    <% rows3.forEach((rows1, i) => { %>
+                                      <% if (rows1.PRICE == 'Friday' && rows1.LOCATION == '4:30-5:00') { %>
+                                        <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                        <%} else { %>
+                                        <% } %>
+                                        <% }) %>
+
+                                        <% rows3.forEach((rows1, i) => { %>
+                                          <% if (rows1.PRICE == 'Saturday' && rows1.LOCATION == '4:30-5:00') { %>
+                                            <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                            <%} else { %>
+                                            <% } %>
+                                            <% }) %>
+
+                                            <% rows3.forEach((rows1, i) => { %>
+                                              <% if (rows1.PRICE == 'Sunday' && rows1.LOCATION == '4:30-5:00') { %>
+                                                <td><center> <p><%=rows1.COND%> </p><p><%=rows1.BRAND%></p></center></td>
+                                                <%} else { %>
+                                                <% } %>
+                                                <% }) %>
+
+                      <td><center></center></td>
+                    </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+                    <!-- Table -->
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                            <th class="hidden-xs">#</th>
+                            <th><center>Subject</center></th>
+                            <th><center>Instructor</center></th>
+                            <th><center>Date</center></th>
+                            <th><center>Time of Use</center></th>
+                            <th><center>Actions</center></th>
+                        </tr> 
+                      </thead>
+                      <tbody id="databody">
+                                                
+                      </tbody>
+        
+                      <tbody>
+        
+                              <% rows3.forEach((appointment, i) => { %>
+                                <tr>
+                                  <td class="hidden-xs"><%=i+1%></td>
+                                  <td><center> <%=appointment.BRAND%> </center></td>
+                                  <td><center> <%=appointment.COND%> </center></td>
+                                  <td><center> <%=appointment.PRICE%> </center></td>
+                                  <td><center> <%=appointment.LOCATION%> </center></td>
+                                    <td align="center">
+        
+                                     <% id=appointment.ITEM1_ID %>
+                                     
+                                         <a href="/admin/assigntime/<%=appointment.ITEM1_ID%>" class="btn btn-danger" style="background-color:red; border-color: transparent;">Edit <em class="fa fa-spinner"></em></a>
+                                         <a href="/admin/maintenance/<%=appointment.ITEM1_ID%>" class="btn btn-danger" style="background-color:blue; border-color: transparent;">Delete</a>
+                                   </td>
+          
+                                </tr>
+                              <% }) %>
+        
+                      </tbody>
+                    </table>
+        </div>
+      </div>
+    </main>
+    <script>
+    function printPageArea(areaID){
+    var printContent = document.getElementById(areaID);
+    var WinPrint = window.open('', '', 'width=9000,height=650');
+    WinPrint.document.write(printContent.innerHTML);
+    WinPrint.document.close();
+    WinPrint.focus();
+    WinPrint.print();
+    WinPrint.close();
+}
+    </script>
+
+<%- include('../partials/footer') %>

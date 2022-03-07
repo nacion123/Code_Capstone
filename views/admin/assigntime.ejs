@@ -1,0 +1,113 @@
+<%- include('../partials/admin/contentheader') %>
+    <!-- Main Body (content)-->
+    <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger" role="alert">
+          <%= error %>
+      </div>
+  <% } %>
+  <% if(success && success.length > 0){ %>
+      <div class="alert alert-success" role="alert">
+          <%= success %>
+      </div>
+  <% } %>
+  <% if(info && info.length > 0){ %>
+      <div class="alert alert-info" role="alert">
+          <%= info %>
+      </div>
+  <% } %>
+  <form id="appointment-form" class="signup-form" role="form" method="post" action="/admin/equipment/assigntime/<%=row1[0].ITEM1_ID %>">
+    <input type="hidden" name="_method" value="PUT">
+
+  <!-- form header -->
+  <div class="form-header">
+    <h1>Update Room Schedule</h1>
+  </div>
+
+  <!-- form body -->
+  <div class="form-body">
+
+     <!-- Firstname and Lastname -->
+     <div class="horizontal-group">
+
+      <div class="form-group right">
+        <label for="lname" class="label-title"><b>Instructor</b></label>
+        <input type="text" id="lname" name="condition" value="<%=row1[0].COND%>" class="form-input" required/>
+    </div>
+
+      <div class="form-group left">
+        <label for="mname" class="label-title"><b>Subject</b></label>
+        <input type="text" id="mname" name="brand" value="<%=row1[0].BRAND%>" class="form-input" required/>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="horizontal-group">
+
+          <div  class="form-group right">
+          <label for="medTime"><b>Select Date:</b></label>
+          <select  style="padding: 10px 10px; margin-top: 40px; margin-left: 30px;" name="price"required>
+              <option value="">Select Date</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+    </div>
+
+    <!-- Passwrod and confirm password -->
+    <div class="horizontal-group">
+      <div  class="form-group left">
+        <label for="medTime" style="margin-left: 0px;"><b>Time Of Use:</b></label>
+        <select  style="padding: 10px 10px; margin-top: 40px; margin-left: 20px;" name="location"required>
+            <option value="">Select Time</option>
+            <option value="8:00-9:00">8:00-9:00</option>
+            <option value="10:00-10:30">10:00-10:30</option>
+            <option value="11:20-11:50">11:20-11:50</option>
+            <option value="12:00-12:50">12:00-12:50</option>
+            <option value="1:00-1:20">1:00-1:20</option>
+            <option value="2:00-2:20">2:00-2:20</option>
+            <option value="2:40-2:50">2:40-2:50</option>
+            <option value="3:00-3:20">3:00-3:20</option>
+            <option value="4:00-4:20">4:00-4:20</option>
+            <option value="4:30-5:00">4:30-5:00</option>
+        </select>
+      </div>
+    </div>
+  <!-- form-footer -->
+  <div class="form-footer">
+    <button type="submit" style="background-color:#281b0d; border-color: transparent;" class="btn btn-primary btns">
+      Update
+  </button>
+  </div>
+
+
+</form>
+
+           <script>
+
+            var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var d = new Date();
+            var monthName=months[d.getMonth()]+'-'+d.getDate()+'-'+d.getFullYear();
+
+            document.getElementById("p1").innerHTML = monthName;
+
+            function submitForm(){
+
+              var fn = document.getElementById('fname').value;
+              var mn = document.getElementById('mname').value;
+              var ln = document.getElementById('lname').value;
+              var em = document.getElementById('email').value;
+              var pass = document.getElementById('password').value;
+              var spec = document.getElementById('spec').value;
+
+              alert ("Item Name : " + fn + "\n" + "Brand : " + mn + "\n" + "Condition : " + ln + "\n" + "Unit Price : " + em + "\n" + "Location : " + pass + "\n" + "Item Life Span : " + spec);
+              }
+
+
+            </script>
+
+<%- include('../partials/footer') %>

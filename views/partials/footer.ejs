@@ -1,0 +1,55 @@
+    <!-- ! Footer -->
+    <footer class="footer">
+      <div class="container footer--flex">
+        <div class="footer-start">
+         <button type="button" class="btn" style="background-color: transparent;" data-toggle="modal" data-target="#staticBackdropsss">
+           About
+         </button>
+ 
+         <div class="modal fade" id="staticBackdropsss" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+           <div class="modal-dialog">
+           <div class="modal-content">
+
+               <div class="modal-header">
+                 <center><img src="/img/logo.png" alt="Logo" style="width: 50%;"></center>
+               </div>
+
+               <div class="modal-body">
+                   <center><h5>This web application is for room utilization with conflict detection. 
+                     The admin can set schedule in this feature it inludes its input of subject,
+                      instructor, selection of room, date and specific time. 
+                     This application was developed by BSIT students for 
+                     their capstone project.</h5></center>
+               </div>
+               <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+           </div>
+           </div>
+       </div>
+       
+        </div>
+        <ul class="footer-end">
+ 
+     
+ 
+ 
+        </ul>
+      </div>
+    </footer>
+  </div>
+ 
+ 
+  <script src="/plugins/feather.min.js"></script>
+  <script src="/js/script.js"></script>
+  <script>
+ 
+    var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var d = new Date();
+    var monthName=months[d.getMonth()]+'-'+d.getDate()+'-'+d.getFullYear()+'-'+d.toLocaleTimeString();
+ 
+    document.getElementById("p1").innerHTML = monthName;
+ 
+    </script>
+  </body>
+ </html>
